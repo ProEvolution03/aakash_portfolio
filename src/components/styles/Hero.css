@@ -377,5 +377,12 @@
   .hero__image { width: 220px; height: 250px; }
   .hero__content { align-items: center; text-align: center; }
   .hero__desc { text-align: left; }
-  .hero__badge, .hero__actions, .hero__socials { justify-content: center; }
+  .hero__badge, .hero__actions, .hero__socials, .hero__socials-row { justify-content: center; }
+  
+  .hero__np-card {
+    left: 50%;
+    margin-left: -125px;
+    width: 250px;
+    min-width: unset;
+  }
 }
