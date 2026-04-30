@@ -132,9 +132,9 @@ export default function Navbar() {
         {open && (
           <motion.div
             className="mobile-menu"
-            initial={{ opacity: 0, scale: 0.95, y: -12 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -12 }}
+            initial={{ opacity: 0, scale: 0.95, y: -12, x: '-50%' }}
+            animate={{ opacity: 1, scale: 1, y: 0, x: '-50%' }}
+            exit={{ opacity: 0, scale: 0.95, y: -12, x: '-50%' }}
             transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
           >
             {NAV_LINKS.map(({ label, href }, i) => (

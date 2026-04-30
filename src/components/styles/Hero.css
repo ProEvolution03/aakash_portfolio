@@ -380,8 +380,9 @@
   .hero__badge, .hero__actions, .hero__socials, .hero__socials-row { justify-content: center; }
   
   .hero__np-card {
-    left: 50%;
-    margin-left: -125px;
+    left: auto;
+    right: 0;
+    margin-left: 0;
     width: 250px;
     min-width: unset;
   }
