@@ -1,0 +1,373 @@
+/* ═══════════════════════════════════════════════════════════════
+   HERO  –  Editorial Layout  (Engineer's Notebook)
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 0 5rem;
+}
+
+/* ─── Faint editorial watermark / marquee ─── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero__marquee {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  width: 160vw;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  user-select: none;
+  font-family: 'IBM Plex Mono', monospace;
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.hero__marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 70s linear infinite;
+}
+
+.hero__marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.hero__marquee span {
+  font-size: 9vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+}
+
+.hero__marquee .dot {
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 50%;
+  background: var(--accent-red);
+  opacity: 0.6;
+}
+
+/* ─── Main layout ─── */
+.hero__main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .hero__main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+}
+
+/* ─── Content column ─── */
+.hero__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+  max-width: 580px;
+}
+
+/* ─── Stamp badge ─── */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.32rem 0.85rem;
+  border: 1.5px solid var(--accent-red);
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  opacity: 0.85;
+}
+
+.hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  animation: pulseDot 2.2s ease-in-out infinite;
+}
+
+/* ─── Heading ─── */
+.hero__title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(2.4rem, 6.5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--ink-primary);
+}
+
+.hero__name {
+  color: var(--accent-red);
+}
+
+.hero__title-sub {
+  display: block;
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  font-weight: 400;
+  color: var(--ink-secondary);
+  letter-spacing: -0.01em;
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+
+/* ─── Description ─── */
+.hero__desc {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: var(--ink-secondary);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+/* ─── Actions ─── */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ─── Socials row (socials + Now Playing together) ─── */
+.hero__socials-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero__socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.hero__social {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--rule-heavy);
+  color: var(--ink-secondary);
+  background: var(--bg-card);
+  transition: all 0.2s ease;
+  box-shadow: 1px 2px 0 rgba(26, 23, 20, 0.10);
+}
+.hero__social:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 0 rgba(26, 23, 20, 0.12);
+}
+
+/* ─── Polaroid image wrapper ─── */
+.hero__image-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero__polaroid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 10px 10px 36px;
+  transform: rotate(2.5deg);
+  box-shadow:
+    3px 6px 20px rgba(26, 23, 20, 0.18),
+    0 1px 3px rgba(26, 23, 20, 0.10);
+  border: 1px solid rgba(26, 23, 20, 0.06);
+  position: relative;
+}
+
+.hero__polaroid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero__image {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__polaroid-caption {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+  font-style: italic;
+}
+
+/* ─── Now Playing button ─── */
+.hero__np-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.8rem;
+  border: 1.5px solid rgba(29, 185, 84, 0.35);
+  border-radius: 50px;
+  background: rgba(29, 185, 84, 0.06);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  position: relative;
+}
+.hero__np-btn:hover,
+.hero__np-btn--open {
+  background: rgba(29, 185, 84, 0.10);
+  border-color: rgba(29, 185, 84, 0.55);
+  color: var(--ink-primary);
+}
+
+/* Equalizer bars inside the button */
+.hero__np-eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 9px;
+}
+.hero__np-eq .eq-bar {
+  width: 2px;
+  background: #1DB954;
+  border-radius: 1px;
+  animation: equalize 1s infinite alternate ease-in-out;
+}
+.hero__np-eq .eq-bar:nth-child(1) { height: 35%; animation-delay: 0.0s; }
+.hero__np-eq .eq-bar:nth-child(2) { height: 100%; animation-delay: 0.25s; }
+.hero__np-eq .eq-bar:nth-child(3) { height: 55%; animation-delay: 0.5s; }
+
+@keyframes equalize {
+  0%   { height: 20%; }
+  100% { height: 100%; }
+}
+
+.hero__np-label { line-height: 1; }
+
+/* ─── Popover card ─── */
+.hero__np-card {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  z-index: 100;
+  background: var(--bg-card);
+  border: 1px solid var(--rule-heavy);
+  border-radius: 8px;
+  box-shadow: 4px 6px 24px rgba(26, 23, 20, 0.16);
+  min-width: 240px;
+  overflow: hidden;
+}
+
+.hero__np-track {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.hero__np-track:hover { background: rgba(29, 185, 84, 0.04); }
+
+.hero__np-art {
+  width: 46px;
+  height: 46px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 1px 2px 6px rgba(26, 23, 20, 0.15);
+}
+
+.hero__np-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.hero__np-song {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero__np-artist {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--ink-secondary);
+}
+
+.hero__np-open {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #1DB954;
+  margin-top: 0.2rem;
+}
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: var(--ink-muted);
+}
+
+/* ─── Mobile adjustments ─── */
+@media (max-width: 899px) {
+  .hero__polaroid {
+    padding: 8px 8px 28px;
+    transform: rotate(1.5deg);
+  }
+  .hero__image { width: 220px; height: 250px; }
+  .hero__content { align-items: center; text-align: center; }
+  .hero__desc { text-align: left; }
+  .hero__badge, .hero__actions, .hero__socials { justify-content: center; }
+}

@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════════════════════════
+   Spotify Widget  –  Warm dark pill
+   ═══════════════════════════════════════════════════════════════ */
+
+.spotify-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  background: rgba(28, 22, 16, 0.82);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(26, 23, 20, 0.35);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  max-width: 320px;
+}
+
+.spotify-widget:hover {
+  background: rgba(34, 26, 18, 0.90);
+  border-color: rgba(29, 185, 84, 0.35);
+  box-shadow: 0 6px 28px rgba(26, 23, 20, 0.45), 0 0 16px rgba(29, 185, 84, 0.12);
+  transform: translateY(-2px);
+}
+
+.spotify__icon-wrapper {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 6px rgba(29, 185, 84, 0.35));
+}
+
+.spotify__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.spotify__status {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.12rem;
+}
+
+.spotify__label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1DB954;
+}
+
+/* Equalizer */
+.spotify__eq { display: flex; align-items: flex-end; gap: 2px; height: 8px; }
+.eq-bar {
+  width: 2px;
+  background-color: #1DB954;
+  border-radius: 1px;
+  animation: equalize 1s infinite alternate ease-in-out;
+}
+.eq-bar:nth-child(1) { height: 40%; animation-delay: 0.0s; }
+.eq-bar:nth-child(2) { height: 100%; animation-delay: 0.3s; }
+.eq-bar:nth-child(3) { height: 60%; animation-delay: 0.6s; }
+
+@keyframes equalize {
+  0%   { height: 20%; }
+  100% { height: 100%; }
+}
+
+/* Track info */
+.spotify__track {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+.spotify__title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(253, 250, 244, 0.9);
+  transition: color 0.2s;
+}
+.spotify__track:hover .spotify__title { text-decoration: underline; text-underline-offset: 3px; }
+
+.spotify__artist {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.72rem;
+  color: rgba(253, 250, 244, 0.5);
+}
+
+/* Album art */
+.spotify__album-art {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  border: 3px solid rgba(28, 22, 16, 0.8);
+  box-shadow: 0 3px 8px rgba(26, 23, 20, 0.4);
+  animation: spinVinyl 6s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotify__album-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.spotify__vinyl-hole {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: rgba(28, 22, 16, 0.9);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .spotify-widget {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+    border-radius: 12px;
+  }
+}

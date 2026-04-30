@@ -1,0 +1,25 @@
+/* TransitionFlash — radial expand overlay on nav link click */
+
+.tf-overlay {
+  position: fixed;
+  /* Center the radial burst on the click point */
+  left:   calc(var(--tx) - 220px);
+  top:    calc(var(--ty) - 220px);
+  width:  440px;
+  height: 440px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+
+  /* Multi-stop radial gradient — red core → amber mid → transparent */
+  background: radial-gradient(
+    circle at center,
+    rgba(184, 50,  50,  0.18)   0%,
+    rgba(200, 117,  51, 0.10)  40%,
+    transparent                 75%
+  );
+
+  /* Tiny blur so the edges feather nicely */
+  filter: blur(2px);
+  transform-origin: center center;
+}
