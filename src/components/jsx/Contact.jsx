@@ -6,17 +6,17 @@ import RevealSection from './RevealSection';
 import '../styles/Contact.css';
 
 const INFO = [
-  { icon: Mail,    label: 'Email',    value: 'aakashiyer03@gmail.com'          },
-  { icon: MapPin,  label: 'Location', value: 'Chennai, Tamil Nadu, India'       },
+  { icon: Mail, label: 'Email', value: 'aakashiyer03@gmail.com' },
+  { icon: MapPin, label: 'Location', value: 'Chennai, Tamil Nadu, India' },
 ];
 
 export default function Contact() {
-  const ref      = useRef(null);
-  const inView   = useInView(ref, { once: true, margin: '-80px' });
-  const [sent,     setSent]     = useState(false);
-  const [sending,  setSending]  = useState(false);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [form,     setForm]     = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,12 +27,12 @@ export default function Contact() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          name:       form.name,
-          from_name:  form.name,
-          email:      form.email,
+          name: form.name,
+          from_name: form.name,
+          email: form.email,
           from_email: form.email,
-          reply_to:   form.email,
-          message:    form.message,
+          reply_to: form.email,
+          message: form.message,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
@@ -83,11 +83,11 @@ export default function Contact() {
               </div>
             ))}
 
-            <div className="contact__availability">
+            <div className="contact__availability contact__availability--unavailable">
               <span className="contact__avail-dot" />
               <div>
                 <span className="contact-info-card__label">Availability</span>
-                <span className="contact-info-card__value">Open to freelancing!</span>
+                <span className="contact-info-card__value">Currently unavailable</span>
               </div>
             </div>
           </motion.div>
@@ -119,7 +119,7 @@ export default function Contact() {
                       id="name"
                       className="form-input"
                       type="text"
-                      placeholder="Jane Doe"
+                      placeholder="Your Name"
                       required
                       value={form.name}
                       onChange={e => setForm({ ...form, name: e.target.value })}
@@ -131,7 +131,7 @@ export default function Contact() {
                       id="email"
                       className="form-input"
                       type="email"
-                      placeholder="jane@example.com"
+                      placeholder="your-email@emailID.com"
                       required
                       value={form.email}
                       onChange={e => setForm({ ...form, email: e.target.value })}

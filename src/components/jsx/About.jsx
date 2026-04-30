@@ -6,7 +6,7 @@ import '../styles/About.css';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 36 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.4, 0, 0.2, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.4, 0, 0.2, 1] } },
 };
 
 const CHIPS = [
@@ -16,30 +16,30 @@ const CHIPS = [
 
 const TIMELINE = [
   {
-    icon:   Briefcase,
+    icon: Briefcase,
     period: '2026 – Present',
-    title:  'Automation Engineer',
-    org:    'CareYu Automation Pvt. Ltd.',
-    desc:   'Being posted as Automation Engineer, planning on maximising efficient warehouse storage solutions.',
+    title: 'Automation Engineer',
+    org: 'CareYu Automation Pvt. Ltd.',
+    desc: 'Working as Automation Engineer, planning on maximising efficient warehouse storage solutions.',
   },
   {
-    icon:   Briefcase,
+    icon: Briefcase,
     period: '2025',
-    title:  'Mechatronics Engineer — Intern',
-    org:    'Nirbhav Automation Pvt. Ltd.',
-    desc:   'Worked on automation solutions for clean and safe packaging of hazardous chemicals, along with inspection systems for defect detection and dimension measuring.',
+    title: 'Mechatronics Engineer — Intern',
+    org: 'Nirbhav Automation Pvt. Ltd.',
+    desc: 'Worked on automation solutions for clean and safe packaging of hazardous chemicals, along with inspection systems for defect detection and dimension measuring.',
   },
   {
-    icon:   GraduationCap,
+    icon: GraduationCap,
     period: '2021 – 2025',
-    title:  'B.Tech. Mechatronics',
-    org:    'SASTRA University',
-    desc:   'Graduated in 2025, with expertise and knowledge in robotics, automation, and control systems.',
+    title: 'B.Tech. Mechatronics',
+    org: 'SASTRA University',
+    desc: 'Graduated in 2025, with expertise and knowledge in robotics, automation, and control systems.',
   },
 ];
 
 export default function About() {
-  const ref    = useRef(null);
+  const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (

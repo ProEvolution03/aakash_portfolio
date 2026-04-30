@@ -126,9 +126,30 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #2E7D32;
+  background: #43823f;
   animation: pulseDot 2s ease-in-out infinite;
   flex-shrink: 0;
+}
+
+/* ─── Availability Status Modifiers ─── */
+/* Use by adding class to .contact__availability in Contact.jsx */
+.contact__availability--available .contact__avail-dot {
+  background: #43823f;
+}
+
+.contact__availability--limited .contact__avail-dot {
+  background: #c47616;
+}
+.contact__availability--limited .contact-info-card__value {
+  color: #c47616;
+}
+
+.contact__availability--unavailable .contact__avail-dot {
+  background: var(--accent-red);
+  animation: none;
+}
+.contact__availability--unavailable .contact-info-card__value {
+  color: var(--accent-red);
 }
 
 /* ─── Form — ink-on-paper style ─── */

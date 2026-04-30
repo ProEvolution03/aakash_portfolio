@@ -6,8 +6,8 @@ import aakashImage from '../../assets/aakash_image.jpg';
 import '../styles/Hero.css';
 
 const SOCIALS = [
-  { icon: Github,    href: 'https://github.com/ProEvolution03',          label: 'GitHub'    },
-  { icon: Twitter,   href: 'https://x.com/aakashtm_03',                   label: 'X.com'     },
+  { icon: Github, href: 'https://github.com/ProEvolution03', label: 'GitHub' },
+  { icon: Twitter, href: 'https://x.com/aakashtm_03', label: 'X.com' },
   { icon: Instagram, href: 'https://www.instagram.com/aakashsivakumar_/', label: 'Instagram' },
 ];
 
@@ -17,7 +17,7 @@ const container = {
 };
 const item = {
   hidden: { opacity: 0, y: 28 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.4, 0, 0.2, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.4, 0, 0.2, 1] } },
 };
 
 /* ─── Spotify SVG icon ─── */

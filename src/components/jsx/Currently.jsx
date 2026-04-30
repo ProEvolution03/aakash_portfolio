@@ -6,33 +6,33 @@ import '../styles/Currently.css';
 /* ─── Status items — update these whenever things change ─── */
 const ITEMS = [
   {
-    key:   'building',
+    key: 'building',
     label: 'Building',
-    value: 'Warehouse automation systems @ CareYu',
-    note:  'Maximising storage density & throughput',
+    value: 'Warehouse Automation Systems @ Care Yu Automation',
+    note: 'Maximising storage density & throughput',
   },
   {
-    key:   'reading',
+    key: 'reading',
     label: 'Reading',
-    value: 'Atomic Habits',
-    note:  'James Clear',
+    value: 'I Have The Streets : A Kutti Cricket Story',
+    note: 'Ravichandran Ashwin',
   },
   {
-    key:   'learning',
+    key: 'learning',
     label: 'Learning',
-    value: 'ROS2 nav2 stack',
-    note:  'Autonomous mobile robots',
+    value: 'Fullstack ROS2',
+    note: 'Entire autonomous navigation stack',
   },
   {
-    key:   'watching',
+    key: 'watching',
     label: 'Watching',
     value: 'IPL 2025',
-    note:  'Go CSK 🏏',
+    note: 'Khel Bindaas!',
   },
 ];
 
 export default function Currently() {
-  const ref    = useRef(null);
+  const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (

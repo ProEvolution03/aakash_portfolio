@@ -116,6 +116,30 @@
   animation: pulseDot 2.2s ease-in-out infinite;
 }
 
+/* ─── Availability Status Modifiers ─── */
+/* Use these by adding the class to the hero__badge div in Hero.jsx */
+
+.hero__badge--available {
+  border-color: #43823f;
+  color: #43823f;
+}
+.hero__badge--available .hero__badge-dot { background: #43823f; }
+
+.hero__badge--limited {
+  border-color: #c47616;
+  color: #c47616;
+}
+.hero__badge--limited .hero__badge-dot { background: #c47616; }
+
+.hero__badge--unavailable {
+  border-color: var(--ink-muted);
+  color: var(--ink-muted);
+}
+.hero__badge--unavailable .hero__badge-dot { 
+  background: var(--ink-muted); 
+  animation: none; 
+}
+
 /* ─── Heading ─── */
 .hero__title {
   font-family: 'IBM Plex Mono', monospace;
