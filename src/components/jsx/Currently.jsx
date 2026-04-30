@@ -14,8 +14,8 @@ const ITEMS = [
   {
     key: 'reading',
     label: 'Reading',
-    value: 'I Have The Streets : A Kutti Cricket Story',
-    note: 'Ravichandran Ashwin',
+    value: 'Cricket 2.0 : Inside the T20 Revolution',
+    note: 'Freddie Wilde',
   },
   {
     key: 'learning',
@@ -26,7 +26,7 @@ const ITEMS = [
   {
     key: 'watching',
     label: 'Watching',
-    value: 'IPL 2025',
+    value: 'IPL 2026',
     note: 'Khel Bindaas!',
   },
 ];
