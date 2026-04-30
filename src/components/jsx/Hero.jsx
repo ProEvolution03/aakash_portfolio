@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { Github, Twitter, Instagram } from './Icons';
 import { useState, useEffect } from 'react';
-import aakashImage from '../../assets/aakash_image.jpg';
+import aakashImage from '../../assets/aakash_image.png';
 import '../styles/Hero.css';
 
 const SOCIALS = [
@@ -153,8 +153,8 @@ export default function Hero() {
 
           {/* Description */}
           <motion.p className="hero__desc" variants={item}>
-            I try to bring to life, my dream of introducing robotics to human aid
-            in the best possible way possible.
+            I try to bring to life, my dream of bridging the gap between robotics and human-aid,
+            in the best way possible.
           </motion.p>
 
           {/* CTAs */}
@@ -196,7 +196,7 @@ export default function Hero() {
         >
           <div className="hero__polaroid">
             <img src={aakashImage} alt="Aakash Sivakumar" className="hero__image" />
-            <span className="hero__polaroid-caption">Aakash, 2025.</span>
+            <span className="hero__polaroid-caption">Aakash, 2026.</span>
           </div>
         </motion.div>
       </div>
