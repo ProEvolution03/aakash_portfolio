@@ -69,7 +69,11 @@ function NowPlaying() {
         onClick={() => setOpen(o => !o)}
         aria-label="What I'm listening to"
       >
-        <SpotifyIcon size={14} />
+        {data.isPlaying && data.albumImageUrl ? (
+          <img src={data.albumImageUrl} alt="Album Art" className="hero__np-btn-thumb" />
+        ) : (
+          <SpotifyIcon size={14} />
+        )}
         <div className="hero__np-eq" aria-hidden="true">
           <span className="eq-bar" />
           <span className="eq-bar" />

@@ -261,6 +261,14 @@
   color: var(--ink-primary);
 }
 
+.hero__np-btn-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
 /* Equalizer bars inside the button */
 .hero__np-eq {
   display: flex;
