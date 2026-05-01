@@ -183,6 +183,8 @@ ul     { list-style: none; }
   padding: var(--section-pad);
   position: relative;
   border-top: 2px solid rgba(26, 23, 20, 0.18);
+  /* Offset anchor-scroll so fixed navbar doesn't cover the section */
+  scroll-margin-top: 96px;
 }
 
 /* Hero has no top border */
