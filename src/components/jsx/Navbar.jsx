@@ -13,11 +13,22 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const RESUME_URL = '/aakash_resume.pdf';
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('Home');
   const [open, setOpen] = useState(false);
   const [showResume, setShowResume] = useState(false);
+
+  /* On mobile, open PDF in new tab; on desktop, show modal */
+  const handleResume = () => {
+    if (window.innerWidth <= 720) {
+      window.open(RESUME_URL, '_blank', 'noopener,noreferrer');
+    } else {
+      setShowResume(true);
+    }
+  };
 
   /* Dispatch radial flash centred on click position */
   const fireFlash = (e) => {
@@ -101,7 +112,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <button onClick={() => setShowResume(true)} className="navbar__cta">
+            <button onClick={handleResume} className="navbar__cta">
               View Resume
             </button>
 
@@ -152,7 +163,7 @@ export default function Navbar() {
             ))}
             <button
               className="mobile-menu__cta"
-              onClick={() => { setOpen(false); setShowResume(true); }}
+              onClick={() => { setOpen(false); handleResume(); }}
             >
               View Resume
             </button>
