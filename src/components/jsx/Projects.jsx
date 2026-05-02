@@ -21,7 +21,7 @@ const PROJECTS = [
     color: '#7f5af0',
     featured: true,
     github: 'https://github.com/ProEvolution03/cafe_robot.git',
-    demo: '#',
+    demo: './demos/Cafe Robot demo.mp4',
   },
   {
     title: 'DWA Local Path Planner',
@@ -37,7 +37,7 @@ const PROJECTS = [
     tags: ['ROS2', 'C++', 'Gazebo', 'TurtleBot3', 'Robotics'],
     color: '#2cb67d',
     github: 'https://github.com/ProEvolution03/dwa-local-path-planner',
-    demo: '#',
+    demo: './demos/DWAplanner.png',
   },
   {
     title: 'Neural Navigator',
@@ -56,7 +56,7 @@ const PROJECTS = [
     demo: '#',
   },
   {
-    title: 'Apple Robot - BehaviourTreeCPP Demo',
+    title: 'Apple Robot - BehaviourTree.CPP Demo',
     desc: 'BehaviorTree.CPP-based robot task execution system for structured decision-making.',
     longDesc: 'AppleRobot is a C++ project demonstrating task planning and execution using the BehaviorTree.CPP library. The system models a robot performing a real-world inspired task—navigating to a room, interacting with doors, locating an apple, and completing a retrieval sequence. The behavior is structured using a hierarchical Behavior Tree with Sequences and Fallback nodes, showcasing modular decision-making, condition checking, and action execution. The project highlights how Behavior Trees can be used as an alternative to finite state machines for scalable and maintainable robotic control.',
     features: [
@@ -70,7 +70,7 @@ const PROJECTS = [
     tags: ['C++', 'Behavior Trees', 'BehaviorTree.CPP'],
     color: '#f0ad4e',
     github: 'https://github.com/ProEvolution03/AppleRobot.git',
-    demo: '#',
+    demo: './demos/BehaviorTreeCPP.png',
   },
 ];
 

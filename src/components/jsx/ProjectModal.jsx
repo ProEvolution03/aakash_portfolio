@@ -22,6 +22,15 @@ const panelVariants = {
   },
 };
 
+/* ─── Helper: detect media type from demo path ─── */
+function getDemoType(demo) {
+  if (!demo || demo === '#') return 'none';
+  const ext = demo.split('.').pop().toLowerCase().split('?')[0];
+  if (['mp4', 'webm', 'ogg'].includes(ext)) return 'video';
+  if (['gif', 'jpg', 'jpeg', 'png', 'webp', 'avif'].includes(ext)) return 'image';
+  return 'none';
+}
+
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -35,7 +44,8 @@ export default function ProjectModal({ project, onClose }) {
 
   if (!project) return null;
 
-  const { title, color, tags, featured, longDesc, features, github } = project;
+  const { title, color, tags, featured, longDesc, features, github, demo } = project;
+  const demoType = getDemoType(demo);
 
   return createPortal(
     <AnimatePresence>
@@ -60,34 +70,57 @@ export default function ProjectModal({ project, onClose }) {
           onClick={(e) => e.stopPropagation()}
         >
 
-          {/* ── IMAGE / PREVIEW AREA ── */}
-          <div className="pm-preview" aria-hidden="true">
+          {/* ── PREVIEW AREA ── */}
+          <div className={`pm-preview${demoType !== 'none' ? ' pm-preview--media' : ''}`} aria-hidden="true">
             {/* Ambient glow blob */}
             <div className="pm-preview__glow" />
 
-            {/* Fake browser chrome */}
+            {/* Browser chrome bar */}
             <div className="pm-preview__chrome">
               <span className="pm-preview__dot pm-preview__dot--red"   />
               <span className="pm-preview__dot pm-preview__dot--amber" />
               <span className="pm-preview__dot pm-preview__dot--green" />
-              <span className="pm-preview__url">{title.toLowerCase().replace(/\s+/g, '-')}.app</span>
+              <span className="pm-preview__url">
+                {demoType !== 'none' ? demo.split('/').pop() : `${title.toLowerCase().replace(/\s+/g, '-')}.app`}
+              </span>
             </div>
 
-            {/* Mock UI content skeleton */}
-            <div className="pm-preview__content">
-              <div className="pm-preview__sidebar">
-                <span /><span /><span /><span /><span />
-              </div>
-              <div className="pm-preview__main">
-                <div className="pm-preview__topbar" />
-                <div className="pm-preview__cards">
-                  <span /><span /><span />
+            {/* ── Real media or mock skeleton ── */}
+            {demoType === 'video' && (
+              <video
+                className="pm-preview__media"
+                src={demo}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            )}
+
+            {demoType === 'image' && (
+              <img
+                className="pm-preview__media"
+                src={demo}
+                alt={`${title} demo`}
+              />
+            )}
+
+            {demoType === 'none' && (
+              <div className="pm-preview__content">
+                <div className="pm-preview__sidebar">
+                  <span /><span /><span /><span /><span />
                 </div>
-                <div className="pm-preview__rows">
-                  <span /><span /><span /><span />
+                <div className="pm-preview__main">
+                  <div className="pm-preview__topbar" />
+                  <div className="pm-preview__cards">
+                    <span /><span /><span />
+                  </div>
+                  <div className="pm-preview__rows">
+                    <span /><span /><span /><span />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* ── HEADER ── */}

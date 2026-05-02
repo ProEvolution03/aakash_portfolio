@@ -20,7 +20,7 @@
   position: relative;
   width: 100%;
   max-width: 580px;
-  max-height: 88vh;
+  max-height: 92vh;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
@@ -42,6 +42,13 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* When real media is present — grow to fit but leave room for header + body */
+.pm-preview--media {
+  height: auto;
+  max-height: 45vh;   /* cap at 45vh so body always has space */
   flex-shrink: 0;
 }
 
@@ -143,6 +150,18 @@
   background: rgba(26, 23, 20, 0.05);
 }
 
+/* ── Real media (video / image / gif) ── */
+.pm-preview__media {
+  display: block;
+  width: 100%;
+  height: auto;          /* let natural dimensions dictate height */
+  max-height: 65vh;      /* safety cap so it never overflows the modal */
+  object-fit: contain;   /* show the whole frame, no cropping */
+  position: relative;
+  z-index: 1;
+  background: #000;      /* letterbox bars for wide/narrow media */
+}
+
 /* ─── Header ─── */
 .pm-header {
   position: relative;
@@ -225,6 +244,7 @@
   padding: 1.5rem 1.75rem 1.75rem;
   overflow-y: auto;
   flex: 1;
+  min-height: 200px;   /* always show enough content to be scrollable */
   scrollbar-width: thin;
   scrollbar-color: var(--rule-heavy) transparent;
 }
