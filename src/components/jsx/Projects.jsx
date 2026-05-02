@@ -86,7 +86,7 @@ const PROJECTS = [
       'Cloud database that stores the tasks for the user.'
     ],
     tags: ['React.js', 'Node.js', 'HTML', 'CSS', 'JavaScript', 'Express.js'],
-    color: '#f0ad4e',
+    color: '#2474bc',
     github: 'https://github.com/ProEvolution03/taskmaster-task',
     demo: './demos/taskmaster.png',
   },
