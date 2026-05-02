@@ -128,7 +128,7 @@ export default function Navbar() {
                   animate={{ rotate: 0, opacity: 1 }}
                   exit={{ rotate: 90, opacity: 0 }}
                   transition={{ duration: 0.18 }}
-                  style={{ display: 'flex' }}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: 0 }}
                 >
                   {open ? <X size={20} /> : <Menu size={20} />}
                 </motion.span>

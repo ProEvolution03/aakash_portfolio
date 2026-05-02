@@ -180,12 +180,23 @@
 /* ─── Hamburger ─────────────────────────────────────────────── */
 .navbar__hamburger {
   display: none;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 10;
-  padding: 0.55rem;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  line-height: 0;
   color: var(--ink-secondary);
-  border-radius: 8px;
+  border-radius: 50%;
   transition: color 0.2s;
+}
+.navbar__hamburger > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
 }
 .navbar__hamburger:hover { color: var(--ink-primary); }
 
