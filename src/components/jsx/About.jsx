@@ -59,13 +59,13 @@ export default function About() {
           </h2>
 
           <p className="about__text">
-            I'm Aakash Sivakumar, a Robotics and Automation Engineer, working @CareYu Automation.
+            I'm Aakash Sivakumar, a Robotics and Automation Engineer, working @Care Yu Automation.
             I live at the intersection of finding and designing automation solutions for warehousing
             clients, aiming at efficiently maximising storage density and throughput of their warehouses.
           </p>
           <p className="about__text">
             When my mind is taking a rest, you can find me with a cup of coffee,
-            watching and analysing the Game of Cricket.
+            watching and analyzing the Game of Cricket.
           </p>
 
           {/* Skill chips */}

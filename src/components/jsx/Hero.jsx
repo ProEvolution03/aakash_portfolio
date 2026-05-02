@@ -154,7 +154,7 @@ export default function Hero() {
           {/* Description */}
           <motion.p className="hero__desc" variants={item}>
             I try to bring to life, my dream of bridging the gap between robotics and human-aid,
-            in the best way possible.
+            in the best way possible, while also fine-tuning my expertise in Cricket.
           </motion.p>
 
           {/* CTAs */}

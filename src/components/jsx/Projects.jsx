@@ -72,6 +72,24 @@ const PROJECTS = [
     github: 'https://github.com/ProEvolution03/AppleRobot.git',
     demo: './demos/BehaviorTreeCPP.png',
   },
+  {
+    title: 'Taskmaster - Task Creation Application',
+    desc: 'A task-creation web application for creating priority-based tasks as means of a reminder.',
+    longDesc: 'Taskmaster is a task-creation web application designed for prioritizing and managing tasks through a streamlined, three-stage lifecycle. The platform allows users to quickly capture tasks with clear priority levels that allows user to prioritize certain tasks. It comes with a reminder notification that allows for timely notification reminder for a particular task.',
+    features: [
+      'Create and manage tasks with custom names and priority levels',
+      'Three-stage task lifecycle: Pending, In Progress, Completed',
+      'Task prioritization through priority level assignment',
+      'Reminder notification system for timely task reminders',
+      'Task filtering and categorization',
+      'User-friendly interface for quick task management',
+      'Cloud database that stores the tasks for the user.'
+    ],
+    tags: ['React.js', 'Node.js', 'HTML', 'CSS', 'JavaScript', 'Express.js'],
+    color: '#f0ad4e',
+    github: 'https://github.com/ProEvolution03/taskmaster-task',
+    demo: './demos/taskmaster.png',
+  },
 ];
 
 /* ─── Framer Motion variants ──────────────────────────── */
