@@ -19,8 +19,7 @@ const SKILL_GROUPS = [
 ];
 
 const TOOLS = [
-  'AutoCAD', 'Git', 'Figma', 'Arduino',
-  'Raspberry Pi', 'Gazebo', 'Sensors', 'APIs',
+  'AutoCAD', 'Git', 'Figma', 'Arduino', 'BehaviorTree.CPP', 'Raspberry Pi', 'Gazebo', 'Sensors', 'APIs'
 ];
 
 export default function Skills() {

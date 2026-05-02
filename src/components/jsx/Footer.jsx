@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <span className="footer__logo">Portfolio</span>
+          <span className="footer__logo">Aakash Portfolio</span>
           <p className="footer__tagline">Crafting experiences, one pixel at a time.</p>
         </div>
 
