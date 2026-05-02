@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, GitBranch, Star, Check } from 'lucide-react';
+import { X, GitBranch, Check } from 'lucide-react';
 import '../styles/ProjectModal.css';
 
 const backdropVariants = {
@@ -35,7 +35,7 @@ export default function ProjectModal({ project, onClose }) {
 
   if (!project) return null;
 
-  const { title, color, tags, stars, featured, longDesc, features, github } = project;
+  const { title, color, tags, featured, longDesc, features, github } = project;
 
   return createPortal(
     <AnimatePresence>
@@ -108,15 +108,7 @@ export default function ProjectModal({ project, onClose }) {
 
           {/* ── BODY ── */}
           <div className="pm-body">
-            <div className="pm-stats">
-              <span className="pm-stat">
-                <Star size={14} />
-                <strong>{stars}</strong> stars
-              </span>
-              <span className="pm-divider" />
-              <span className="pm-stat pm-stat--open">Open Source</span>
-            </div>
-
+  
             <div className="pm-section">
               <h3 className="pm-section__label">About</h3>
               <p className="pm-section__text">{longDesc}</p>
