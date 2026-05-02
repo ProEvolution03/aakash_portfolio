@@ -5,26 +5,26 @@ import '../styles/Skills.css';
 
 const SKILL_GROUPS = [
   {
-    label:  'Robotics & Control',
-    skills: ['ROS2 Humble', 'Kinematics & Dynamics', 'Path Planning', 'Motor Control'],
+    label: 'Robotics & Control',
+    skills: ['ROS2 Humble', 'Kinematics & Dynamics', 'Path Planning', 'Motor Control', 'Industrial Automation', 'Manipulator Design'],
   },
   {
-    label:  'Software & Languages',
+    label: 'Software & Languages',
     skills: ['Python', 'C/C++', 'Java', 'React.js', 'Node.js', 'Ubuntu / Linux'],
   },
   {
-    label:  'Vision & AI',
+    label: 'Vision & AI',
     skills: ['OpenCV', 'Machine Learning', 'Data Processing', 'Camera Calibration'],
   },
 ];
 
 const TOOLS = [
-  'SolidWorks', 'AutoCAD', 'Git', 'Docker', 'Figma',
-  'Arduino', 'Raspberry Pi', 'Gazebo', 'Sensors & APIs',
+  'AutoCAD', 'Git', 'Figma', 'Arduino',
+  'Raspberry Pi', 'Gazebo', 'Sensors', 'APIs',
 ];
 
 export default function Skills() {
-  const ref    = useRef(null);
+  const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
